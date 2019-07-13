@@ -11,6 +11,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Unit test for simple App.
  */
 public class AppTest {
+    @Test
+    public void hello() {
+    }
 
     @Test
     public void createBeanWithXml() {
@@ -33,9 +36,20 @@ public class AppTest {
     }
 
     @Test
-    public void testContainsController() {
+    public void testContainsControllerWithXml() {
         ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
         System.out.println(ac.containsBean("bookController"));
     }
+
+    @Test
+    public void testContainsControllerWithAnnotation() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(MainConfig.class);
+        System.out.println(ac.containsBean("bookController"));
+        String[] beanDefinitionNames = ac.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            System.out.println(beanDefinitionName);
+        }
+    }
+
 
 }
