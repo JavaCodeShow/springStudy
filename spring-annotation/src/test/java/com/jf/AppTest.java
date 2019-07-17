@@ -2,6 +2,7 @@ package com.jf;
 
 import com.jf.bean.Person;
 import com.jf.config.MainConfig;
+import com.jf.config.MainConfig2;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -45,6 +46,25 @@ public class AppTest {
     public void testContainsControllerWithAnnotation() {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(MainConfig.class);
         System.out.println(ac.containsBean("bookController"));
+        String[] beanDefinitionNames = ac.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            System.out.println(beanDefinitionName);
+        }
+    }
+
+    @Test
+    public void testScope() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(MainConfig2.class);
+        System.out.println("ioc容器创建完成");
+        Person person = (Person) ac.getBean("person");
+        Person person2 = (Person) ac.getBean("person");
+        System.out.println(person == person2);
+
+    }
+
+    @Test
+    public void testCondition() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(MainConfig2.class);
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
             System.out.println(beanDefinitionName);
