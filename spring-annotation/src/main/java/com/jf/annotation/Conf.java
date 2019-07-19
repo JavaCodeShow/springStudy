@@ -7,15 +7,10 @@ import java.lang.annotation.Target;
 
 /**
  * @author 潇潇暮雨
- * @create 2019-07-17   22:27
+ * @create 2019-07-17   23:22
  */
-
-@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface TestAnnotation {
-
-    int id() default -1;
-
-    String msg() default "hi";
+@Target({ElementType.TYPE})
+public @interface Conf {
 
 }
