@@ -21,7 +21,7 @@ public class MyTypeFilter implements TypeFilter {
         // 获取当前类的名字。
         String className = classMetadata.getClassName();
         System.out.println(className);
-        if (className.contains("Book")) {
+        if (className.contains("ser")) {
             return true;
         }
         return false;

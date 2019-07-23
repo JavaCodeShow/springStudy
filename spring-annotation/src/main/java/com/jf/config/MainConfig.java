@@ -1,10 +1,11 @@
 package com.jf.config;
 
+import com.jf.bean.Color;
 import com.jf.bean.Person;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import com.jf.condition.DogFactoryBean;
+import com.jf.condition.MyImportBeanDefinitionRegistrar;
+import com.jf.condition.MyImportSelector;
+import org.springframework.context.annotation.*;
 
 /**
  * @author 潇潇暮雨
@@ -20,11 +21,21 @@ import org.springframework.context.annotation.FilterType;
         // @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = Object.class)})
         @ComponentScan.Filter(type = FilterType.CUSTOM, classes = MyTypeFilter.class)
 })
+
+
+@Import(value = {Color.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 // 包扫描
+
 public class MainConfig {
 
     @Bean
     public Person person() {
         return new Person("林加铭", 22);
+    }
+
+
+    @Bean
+    public DogFactoryBean dogFactoryBean() {
+        return new DogFactoryBean();
     }
 }
