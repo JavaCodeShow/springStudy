@@ -1,10 +1,13 @@
 package com.jf.bean;
 
+import org.springframework.beans.factory.annotation.Value;
+
 /**
  * @author 潇潇暮雨
  * @create 2019-07-13   16:46
  */
 public class Person {
+    @Value("${name}")
     private String name;
     private Integer age;
 

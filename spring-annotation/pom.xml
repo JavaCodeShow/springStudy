@@ -17,12 +17,16 @@
     </properties>
 
     <dependencies>
+
+        <!-- 测试 -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -49,6 +53,21 @@
             <artifactId>spring-expression</artifactId>
             <version>5.0.9.RELEASE</version>
         </dependency>
+
+        <!-- 连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.10</version>
+        </dependency>
+
+        <!-- 数据库 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>LATEST</version>
+        </dependency>
+
     </dependencies>
 
 </project>

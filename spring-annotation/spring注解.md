@@ -58,7 +58,7 @@
 1. @Value	值得注入。经常与Sping EL表达式语言一起使用，注入普通字符，系统属性，表达式运算结果，其他Bean的属性，文件内容，网址请求内容，配置文件属性值等等
 
 
-1. @PropertySource	指定文件地址。提供了一种方便的、声明性的机制，用于向Spring的环境添加PropertySource。与@configuration类一起使用。
+1. @PropertySource	指定文件地址。提供了一种方便的、声明性的机制，用于向Spring的环境添加PropertySource(外部配置文件，比如db.properties)。与@configuration类一起使用。
 
 
 1. @PostConstruct	标注在方法上，该方法在构造函数执行完成之后执行。
@@ -67,7 +67,7 @@
 1. @PreDestroy	标注在方法上，该方法在对象销毁之前执行。
 
 
-1. @Profile	表示当一个或多个指定的文件是活动的时，一个组件是有资格注册的。使用@Profile注解类或者方法，达到在不同情况下选择实例化不同的Bean。@Profile(“dev”)表示为dev时实例化。
+1. @Profile	根据环境注册的bean。表示当一个或多个指定的文件是活动的时，一个组件是有资格注册的。使用@Profile注解类或者方法，达到在不同情况下选择实例化不同的Bean。@Profile(“dev”)表示为dev时实例化。
 
 
 1. @EnableAsync	开启异步任务支持。注解在配置类上。
