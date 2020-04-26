@@ -5,7 +5,7 @@
     <!--
         <context:component-scan base-package="com.jf" />
     -->
-    <bean id="person" class="com.jf.bean.Person">
+    <bean id="person" class="com.bean.Person" scope="prototype">
         <property name="name" value="林加铭"/>
         <property name="age" value="22"/>
     </bean>
