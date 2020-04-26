@@ -1,7 +1,7 @@
 package com;
 
 import com.bean.Person;
-import com.config.BeanConfig;
+import com.jf.config.BeanConfig;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
